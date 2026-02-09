@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/RajaRathinaGanesan/API_Test.git'
+                    url: 'https://github.com/RajaRathinaGanesan/API_Cassini.git'
             }
         }
 

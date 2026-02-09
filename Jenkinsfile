@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         VENV = ".venv"
+        PYTHON_WIN = "C:\\TestLeaf\\python.exe"
     }
 
     stages {
@@ -14,41 +15,41 @@ pipeline {
             }
         }
 
-        stage('Setup Python') {
+        stage('Setup Python & Dependencies') {
             steps {
                 script {
                     if (isUnix()) {
                         sh '''
                         python3 -m venv $VENV
                         . $VENV/bin/activate
-                        pip install --upgrade pip
+                        python -m pip install --upgrade pip
                         pip install -r requirements.txt
                         '''
                     } else {
-                        bat '''
-                        python -m venv %VENV%
+                        bat """
+                        %PYTHON_WIN% -m venv %VENV%
                         call %VENV%\\Scripts\\activate
-                        pip install --upgrade pip
+                        python -m pip install --upgrade pip
                         pip install -r requirements.txt
-                        '''
+                        """
                     }
                 }
             }
         }
 
-        stage('Run Tests') {
+        stage('Run Pytest') {
             steps {
                 script {
                     if (isUnix()) {
                         sh '''
                         . $VENV/bin/activate
-                        pytest --alluredir=allure-results
+                        pytest -v --disable-warnings --alluredir=allure-results
                         '''
                     } else {
-                        bat '''
+                        bat """
                         call %VENV%\\Scripts\\activate
-                        pytest --alluredir=allure-results
-                        '''
+                        pytest -v --disable-warnings --alluredir=allure-results
+                        """
                     }
                 }
             }

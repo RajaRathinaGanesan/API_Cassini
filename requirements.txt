@@ -2,6 +2,7 @@
 loguru==0.7.3
 pytest>=8.0.0
 requests>=2.32.0
+allure-pytest
 
 # Development Dependencies
 pre-commit>=4.3.0

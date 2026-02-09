@@ -43,12 +43,12 @@ pipeline {
                     if (isUnix()) {
                         sh '''
                         . $VENV/bin/activate
-                        pytest -v --disable-warnings --alluredir=allure-results
+                        pytest -n 5 -v --disable-warnings --alluredir=allure-results || exit /b 1
                         '''
                     } else {
                         bat """
                         call %VENV%\\Scripts\\activate
-                        pytest -v --disable-warnings --alluredir=allure-results
+                        pytest -n 5 -v --disable-warnings --alluredir=allure-results || exit /b 1
                         """
                     }
                 }

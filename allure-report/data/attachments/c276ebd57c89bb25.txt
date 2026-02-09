@@ -1,0 +1,7 @@
+2026-02-09 10:58:55.134 | INFO     | tools.api_client:__init__:26 - Initialising a session for https://restful-booker.herokuapp.com
+2026-02-09 10:58:55.134 | DEBUG    | tools.api_client:_request_with_retry:51 - Sending GET https://restful-booker.herokuapp.com/ping with payload: None
+2026-02-09 10:58:56.887 | DEBUG    | tools.api_client:_request_with_retry:56 - Request sent to https://restful-booker.herokuapp.com/ping
+2026-02-09 10:58:56.887 | DEBUG    | tools.api_client:_request_with_retry:57 - Response status code: <201>;Elapsed time: 1.75211 seconds;Content: b'Created';
+2026-02-09 10:58:56.889 | DEBUG    | tools.api_client:_request_with_retry:51 - Sending POST https://restful-booker.herokuapp.com/auth with payload: {'username': 'baduser', 'password': 'badpass'}
+2026-02-09 10:58:58.553 | DEBUG    | tools.api_client:_request_with_retry:56 - Request sent to https://restful-booker.herokuapp.com/auth
+2026-02-09 10:58:58.554 | DEBUG    | tools.api_client:_request_with_retry:57 - Response status code: <200>;Elapsed time: 1.663431 seconds;Content: b'{"reason":"Bad credentials"}';

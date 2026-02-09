@@ -1,0 +1,55 @@
+[project]
+name = "qa-automation-assessment"
+version = "1.0.0"
+description = "QA Automation Assessment Framework using pytest and RESTful Booker API"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = ["loguru~=0.7.3", "pytest>=8.0.0", "requests>=2.32.0"]
+
+
+[dependency-groups]
+dev = ["pre-commit>=4.3.0"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = [
+    "-ra",
+    "--strict-markers",
+    "--strict-config",
+    "--disable-warnings",
+    "--tb=short",
+    "-v",
+]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+pythonpath = ["."]
+markers = [
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::PendingDeprecationWarning",
+]
+
+[tool.ruff]
+src = [".", "src"]
+fix = true
+
+
+[tool.uv]
+package = false
+
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple"
+
+[tool.ruff.lint]
+ignore = ["E203"]
+select = [
+    "E", # pycodestyle errors
+    "F", # pyflakes
+    "I", # isort
+]

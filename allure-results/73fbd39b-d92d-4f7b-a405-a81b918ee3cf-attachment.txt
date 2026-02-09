@@ -1,0 +1,17 @@
+2026-02-09 10:58:49.595 | INFO     | tools.api_client:__init__:26 - Initialising a session for https://restful-booker.herokuapp.com
+2026-02-09 10:58:49.596 | DEBUG    | tools.api_client:_request_with_retry:51 - Sending GET https://restful-booker.herokuapp.com/ping with payload: None
+2026-02-09 10:58:51.454 | DEBUG    | tools.api_client:_request_with_retry:56 - Request sent to https://restful-booker.herokuapp.com/ping
+2026-02-09 10:58:51.454 | DEBUG    | tools.api_client:_request_with_retry:57 - Response status code: <201>;Elapsed time: 1.856448 seconds;Content: b'Created';
+2026-02-09 10:58:51.455 | INFO     | tools.api_client:__init__:26 - Initialising a session for https://restful-booker.herokuapp.com
+2026-02-09 10:58:51.456 | DEBUG    | tools.api_client:_request_with_retry:51 - Sending POST https://restful-booker.herokuapp.com/auth with payload: {'username': 'admin', 'password': 'password123'}
+2026-02-09 10:58:53.342 | DEBUG    | tools.api_client:_request_with_retry:56 - Request sent to https://restful-booker.herokuapp.com/auth
+2026-02-09 10:58:53.343 | DEBUG    | tools.api_client:_request_with_retry:57 - Response status code: <200>;Elapsed time: 1.885848 seconds;Content: b'{"token":"936123040a8413f"}';
+2026-02-09 10:58:53.344 | DEBUG    | tools.api_client:_request_with_retry:51 - Sending POST https://restful-booker.herokuapp.com/booking with payload: {'firstname': 'Johny', 'lastname': 'Doep', 'totalprice': 123, 'depositpaid': True, 'bookingdates': {'checkin': '2024-01-01', 'checkout': '2024-01-06'}, 'additionalneeds': 'Breakfast'}
+2026-02-09 10:58:55.112 | DEBUG    | tools.api_client:_request_with_retry:56 - Request sent to https://restful-booker.herokuapp.com/booking
+2026-02-09 10:58:55.112 | DEBUG    | tools.api_client:_request_with_retry:57 - Response status code: <200>;Elapsed time: 1.766942 seconds;Content: b'{"bookingid":4380,"booking":{"firstname":"Johny","lastname":"Doep","totalprice":123,"depositpaid":true,"bookingdates":{"checkin":"2024-01-01","checkout":"2024-01-06"},"additionalneeds":"Breakfast"}}';
+2026-02-09 10:58:55.115 | DEBUG    | tools.api_client:_request_with_retry:51 - Sending PUT https://restful-booker.herokuapp.com/booking/4380 with payload: {'firstname': 'UpdatedFirstName', 'lastname': 'Doep', 'totalprice': 123, 'depositpaid': True, 'bookingdates': {'checkin': '2024-01-01', 'checkout': '2024-01-06'}, 'additionalneeds': 'Breakfast'}
+2026-02-09 10:58:56.800 | DEBUG    | tools.api_client:_request_with_retry:56 - Request sent to https://restful-booker.herokuapp.com/booking/4380
+2026-02-09 10:58:56.800 | DEBUG    | tools.api_client:_request_with_retry:57 - Response status code: <200>;Elapsed time: 1.683502 seconds;Content: b'{"firstname":"UpdatedFirstName","lastname":"Doep","totalprice":123,"depositpaid":true,"bookingdates":{"checkin":"2024-01-01","checkout":"2024-01-06"},"additionalneeds":"Breakfast"}';
+2026-02-09 10:58:56.800 | DEBUG    | tools.api_client:_request_with_retry:51 - Sending GET https://restful-booker.herokuapp.com/booking/4380 with payload: None
+2026-02-09 10:58:58.597 | DEBUG    | tools.api_client:_request_with_retry:56 - Request sent to https://restful-booker.herokuapp.com/booking/4380
+2026-02-09 10:58:58.597 | DEBUG    | tools.api_client:_request_with_retry:57 - Response status code: <200>;Elapsed time: 1.795999 seconds;Content: b'{"firstname":"UpdatedFirstName","lastname":"Doep","totalprice":123,"depositpaid":true,"bookingdates":{"checkin":"2024-01-01","checkout":"2024-01-06"},"additionalneeds":"Breakfast"}';
